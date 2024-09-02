@@ -10,6 +10,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //홈페이지
 //영화 전체 보여주는 페이지(서치)
 //영화 디테일 페이지
+//추천 영화 /moives/:id/recommendation
+//리뷰 / /moives/:id/reviews
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
