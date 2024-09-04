@@ -37,6 +37,17 @@
   margin-bottom: 10px;
 }
 
+.genre-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.genre-badge {
+  margin-bottom: 5px;
+}
+
+
 .Badge {
   display: inline-block;
   background-color: #e74c3c;

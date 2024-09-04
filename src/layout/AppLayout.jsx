@@ -4,11 +4,18 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 
 const AppLayout = () => {
   const [expanded, setExpanded] = useState(false);
-
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate()
+  const searchByKeyword=(event)=>{
+    event.preventDefault()
+    /// url 바꿔주기
+    navigate(`/movies?q=${keyword}`);
+    setKeyword("");
+  }
   return (
     <div
       style={{ backgroundColor: "#141414", minHeight: "100vh", color: "white" }}
@@ -43,7 +50,7 @@ const AppLayout = () => {
                 style={{ color: "#e5e5e5" }}
                 onClick={() => setExpanded(false)}
               >
-                홈
+                Home
               </Nav.Link>
               <Nav.Link
                 as={Link}
@@ -51,10 +58,10 @@ const AppLayout = () => {
                 style={{ color: "#e5e5e5" }}
                 onClick={() => setExpanded(false)}
               >
-                영화
+                Movies
               </Nav.Link>
             </Nav>
-            <Form className="d-flex mt-2 mt-lg-0">
+            <Form className="d-flex mt-2 mt-lg-0" onSubmit={searchByKeyword}>
               <Form.Control
                 type="search"
                 placeholder="제목, 사람, 장르"
@@ -66,8 +73,12 @@ const AppLayout = () => {
                   border: "1px solid rgba(255,255,255,0.85)",
                   borderRadius: "4px",
                 }}
+                value={keyword}
+                onChange={(event) => setKeyword(event.target.value)}
               />
-              <Button variant="outline-danger">Search</Button>
+              <Button variant="outline-danger" type="submit">
+                Search
+              </Button>
             </Form>
           </Navbar.Collapse>
         </Container>

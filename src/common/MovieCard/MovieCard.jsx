@@ -5,16 +5,13 @@ import { useMoviesGenreQuery } from "../../hooks/useMoviesGenre";
 
 const MovieCard = ({ movie }) => {
   const { data: genreData } = useMoviesGenreQuery();
-  console.log("ggg", genreData);
 
   const showGenre = (genreIdList) => {
     if (!genreData) return [];
-    const genreNameList = genreIdList.map((id) => {
+    return genreIdList.map((id) => {
       const genreObj = genreData.find((genre) => genre.id === id);
-      return genreObj.name;
+      return genreObj ? genreObj.name : '';
     });
-
-    return genreNameList;
   };
 
   return (
@@ -30,14 +27,16 @@ const MovieCard = ({ movie }) => {
       <div className="overlay">
         <div>
           <h1>{movie.title}</h1>
-          {showGenre(movie.genre_ids).map((id) => (
-            <Badge key={id} bg="danger">
-              {id}
-            </Badge>
-          ))}
+          <div className="genre-container">
+            {showGenre(movie.genre_ids).map((genreName, index) => (
+              <Badge key={index} bg="danger" className="genre-badge">
+                {genreName}
+              </Badge>
+            ))}
+          </div>
         </div>
         <div>
-          <div className="average">{movie.vote_average}</div>
+          <div className="average">{movie.vote_average.toFixed(1)}</div>
           <div className="popularity">{movie.popularity}</div>
           <div
             className="adult"
