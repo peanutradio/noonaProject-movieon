@@ -29,7 +29,8 @@ const MoviePage = () => {
   const handlePageClick = ({ selected }) => {
     setPage(selected + 1);
   };
-  console.log("dddd", data);
+
+  // 로딩 중일 때 스피너 표시
   if (isLoading) {
     return (
       <div className="spinner-area">
@@ -42,9 +43,14 @@ const MoviePage = () => {
     );
   }
 
+  // 에러 발생 시 알림 표시
   if (isError) {
     return <Alert variant="danger">{error.message}</Alert>;
   }
+
+  // 페이지 수를 12페이지로 제한
+  const maxPages = 12;
+  const totalPages = Math.min(data?.total_pages || 0, maxPages);
 
   return (
     <Container>
@@ -55,18 +61,20 @@ const MoviePage = () => {
         </Col>
         <Col lg={8} xs={12}>
           <Row>
+            {/* 영화 카드 렌더링 */}
             {data?.results.map((movie, index) => (
               <Col key={index} lg={4} xs={12}>
                 <MovieCard movie={movie} />
               </Col>
             ))}
           </Row>
+          {/* 페이지네이션 컴포넌트 */}
           <ReactPaginate
             nextLabel="next >"
             onPageChange={handlePageClick}
             pageRangeDisplayed={3}
             marginPagesDisplayed={2}
-            pageCount={data?.total_pages} //전체페이지 몇개인가~?
+            pageCount={totalPages} //전체페이지 몇개인가~? (최대 12페이지로 제한)
             previousLabel="< previous"
             pageClassName="page-item"
             pageLinkClassName="page-link"
