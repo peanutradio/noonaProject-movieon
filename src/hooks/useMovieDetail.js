@@ -10,7 +10,7 @@ const useMovieDetailQuery = (id) => {
     queryKey: ["movie-detail", id],
     queryFn: () => fetchMovieDetail(id),
     select: (result) => result.data,
-    enabled: !!id, // movieId가 있을 때만 쿼리 실행
+    enabled: !!id, 
   });
 };
 

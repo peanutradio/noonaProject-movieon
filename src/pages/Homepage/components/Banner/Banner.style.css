@@ -35,22 +35,22 @@
 /* 모바일 대응을 위한 미디어 쿼리 추가 */
 @media (max-width: 768px) {
   .banner {
-    height: 70vh; /* 모바일에서 배너 높이 증가 */
+    height: 70vh; 
   }
 
   .banner-text-area {
-    width: 80%; /* 모바일에서 텍스트 영역 너비 확대 */
-    justify-content: flex-end; /* 텍스트를 배너 하단으로 이동 */
+    width: 80%; 
+    justify-content: flex-end; 
   }
 
   .banner-text-area h1 {
-    font-size: 1.5rem; /* 모바일에서 제목 크기 축소 */
+    font-size: 1.5rem;
   }
 
   .banner-text-area p {
-    font-size: 0.9rem; /* 모바일에서 본문 텍스트 크기 축소 */
+    font-size: 0.9rem;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* 3줄로 제한 */
+    -webkit-line-clamp: 3; 
     -webkit-box-orient: vertical;
     overflow: hidden;
   }

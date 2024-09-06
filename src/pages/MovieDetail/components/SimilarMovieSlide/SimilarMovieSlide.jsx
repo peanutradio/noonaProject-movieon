@@ -6,7 +6,7 @@ import MovieSlider from '../../../../common/MovieSlider/MovieSlider';
 import responsive from '../../../../constants/responsive';
 
 const SimilarMovieSlide = () => {
-  const { id } = useParams(); // 라우트에서 movie_id를 받아옵니다.
+  const { id } = useParams(); 
   const { data, isLoading, isError, error } = useSimilarMovieQuery(id);
 
   if (isLoading) {

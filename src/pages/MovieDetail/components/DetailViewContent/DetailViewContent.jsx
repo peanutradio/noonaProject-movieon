@@ -5,11 +5,11 @@ import useMovieCreditsQuery from '../../../../hooks/useMovieCredits';
 import './DetailViewContent.style.css';
 
 const DetailViewContent = forwardRef(({ data }, ref) => {
-  const { id } = useParams(); // 라우트에서 movie_id를 받아옵니다.
+  const { id } = useParams(); 
 
   const { data: creditsData, isLoading, isError, error } = useMovieCreditsQuery(id);
 
-  // cast와 director 데이터를 안전하게 가져오기
+
   const castList =
     creditsData?.cast
       ?.slice(0, 10)

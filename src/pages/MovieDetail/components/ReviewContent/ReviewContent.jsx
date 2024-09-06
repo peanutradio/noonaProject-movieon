@@ -8,7 +8,7 @@ const ReviewContent = () => {
   const { id } = useParams();
   const { data, isLoading, isError, error } = useMovieReviewsQuery(id);
 
-  console.log('Review Data:', data); // Review 데이터 확인
+  console.log('Review Data:', data); 
 
   if (isLoading) {
     return <Spinner animation='border' variant='warning' />;
