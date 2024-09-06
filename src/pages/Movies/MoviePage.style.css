@@ -1,0 +1,99 @@
+.movie-page-container {
+  padding: 0 60px;
+}
+
+.filter-container {
+  margin-bottom: 20px;
+}
+
+.dropdown-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #ffffff33;
+  padding: 8px 16px;
+}
+
+.filter-container .btn-primary {
+  background-color: #333;
+  border: none;
+  color: #fff;
+}
+
+.filter-container .btn-primary:hover,
+.filter-container .btn-primary:focus,
+.filter-container .btn-primary:active {
+  background-color: #444;
+  border: none;
+  color: #fff;
+}
+
+.dropdown-menu {
+  width: 100%;
+  padding: 0;
+  margin-top: 4px;
+  background-color: #333;
+  border: 1px solid #ffffff33;
+  color: #fff;
+  max-height: 384px;
+  overflow-y: auto;
+  border-radius: 4px;
+}
+
+.dropdown-item {
+  background-color: #333;
+  color: #fff;
+  padding: 8px 16px;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+  background-color: #444;
+  color: #fff;
+}
+
+.movie-grid {
+  margin-top: 20px;
+}
+
+.pagination {
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.pagination .page-item .page-link {
+  color: #f9bc13;
+  background-color: #141414;
+  border-color: #f9bc13;
+}
+
+.pagination .page-item.active .page-link {
+  color: #141414;
+  background-color: #f9bc13;
+  border-color: #f9bc13;
+}
+
+.pagination .page-item .page-link:hover {
+  color: #141414;
+  background-color: #f9bc13;
+  border-color: #f9bc13;
+}
+
+h3.text-white {
+  margin-top: 2rem;
+}
+.alert {
+  z-index: 1040;
+}
+
+.spinner-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

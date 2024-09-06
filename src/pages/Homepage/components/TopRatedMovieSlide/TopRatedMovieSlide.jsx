@@ -2,7 +2,7 @@ import React from "react";
 import { useTopRatedMoviesQuery } from "../../../../hooks/useTopRatedMovies";
 import { Alert } from "bootstrap";
 import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
-import { responsive } from "../../../../constants/responsive";
+import responsive from '../../../../constants/responsive';
 
 const TopRatedMovieSlide = () => {
   const { data, isLoading, isError, error } = useTopRatedMoviesQuery();

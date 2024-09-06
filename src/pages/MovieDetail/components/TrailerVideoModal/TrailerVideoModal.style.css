@@ -1,0 +1,34 @@
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 비율 */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .trailer-modal .modal-dialog {
+    max-width: 90%;
+    margin: 1.75rem auto;
+  }
+
+  .trailer-modal .modal-content {
+    height: auto;
+  }
+
+  .trailer-modal .modal-body {
+    padding: 0;
+  }
+
+  .video-container {
+    padding-bottom: 75%; /* 4:3 비율로 변경하여 더 작게 표시 */
+  }
+}
